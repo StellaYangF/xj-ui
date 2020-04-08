@@ -1,8 +1,10 @@
 <template>
-    <button class='xj-button' :class='btnClass' @click="$emit('click')">
-        <span v-if='this.$slots.default'>
+    <button class='xj-button' :class='btnClass' @click="$emit('click')" :disabled='loading'>
+        <span v-if='$slots.default'>
             <slot></slot>
         </span>
+        <xj-icon :icon='icon' v-if="icon && !loading" class='icon'></xj-icon>
+        <xj-icon icon='loading' v-if="loading" class='icon'></xj-icon>
     </button>
 </template>
 <script>
@@ -18,7 +20,19 @@ export default {
                 }
                 return true;
             }
-        }
+        },
+        icon: String,
+        iconPosition: {
+            type: String,
+            default: 'right',
+            validator(type) {
+                if (type && !['left', 'right'].includes(type)) {
+                    console.error(`icon-position 必须为：${['left', 'right'].join(', ')}`)
+                }
+                return true;
+            }
+        },
+        loading: Boolean,
     },
     computed: {
         btnClass() {
@@ -26,8 +40,11 @@ export default {
             if (this.type) {
                 classes.push(`xj-button-${this.type}`);
             }
+            if (this.iconPosition) {
+                classes.push(`xj-button-${this.iconPosition}`)
+            }
             return classes;
-        }
+        },
     },
     methods: {
     }
@@ -50,7 +67,7 @@ $active-color: #3a8ee6;
     font-size: $font-size;
     display: inline-flex;
     justify-content: center;
-    vertical-align: middle;
+    vertical-align: center;
     cursor: pointer;
     &:hover {
         border-color: $border-color;
@@ -67,6 +84,7 @@ $active-color: #3a8ee6;
             background: #{$color};
             border: 1px solid #{$color};
             color: #fff;
+            fill: #fff;
         }
     } 
     @each $type, $color in (primary: $primary-hover, success: $success-hover, warning: $warning-hover, danger: $danger-hover, info: $info-hover ) {
@@ -75,6 +93,7 @@ $active-color: #3a8ee6;
             border: 1px solid #{$color};
             color: #fff;
         }
+       
     } 
     @each $type, $color in (primary: $primary-active, success: $success-active, warning: $warning-active, danger: $danger-active, info: $info-active ) {
         &-#{$type}:focus, &-#{$type}:active {
@@ -83,5 +102,24 @@ $active-color: #3a8ee6;
             color: #fff;
         }
     } 
+    .icon {
+        width: 16px;
+        height: 16px;
+    }
+    &-left {
+        svg{ order:1; margin-right:4px }
+        span { order:2 };
+    }
+    &-right {
+        span{ order:1 }
+        svg{ order:2; margin-left: 4px };
+    }
+    &[disabled], &[disabled]:hover, &[disabled]:focus, &[disabled]:active {
+        cursor: not-allowed;
+        border: 1px solid $border-color;
+        background: $background;
+        color: $color;
+    }
 }
+
 </style>
