@@ -1,9 +1,11 @@
 import Button from "./Button.vue";
 import Icon from "./Icon.vue";
+import ButtonGroup from "./ButtonGroup.vue";
 
 function install(Vue) {
     Vue.component(Button.name, Button);
     Vue.component(Icon.name, Icon);
+    Vue.component(ButtonGroup.name, ButtonGroup);
 }
 
 // script 标签引入时，不会 调用 install 方法

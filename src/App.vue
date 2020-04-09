@@ -6,7 +6,7 @@
     <xj-button type='warning'>warning button</xj-button>
     <xj-button type='danger'>danger button</xj-button>
     <xj-button type='info'>info button</xj-button>
-    <xj-button type='success' icon='success'>info button</xj-button>
+    <xj-button type='success'>info button</xj-button>
 
     <hr/>
     <!-- buttion with icon -->
@@ -17,6 +17,14 @@
       <xj-button type='info' icon='edit'>info button</xj-button>
       <xj-button type='success' icon='success' icon-position='left' >info icon left</xj-button>
       <xj-button @click="click" :loading='true'>defaul button</xj-button>
+
+      <hr/>
+      <!-- button group -->
+      <xj-button-group>
+        <xj-button icon='arrow-left'  icon-position='left'>上一页</xj-button>
+        <xj-button >第一页</xj-button>
+        <xj-button icon='arrow-right'>下一页</xj-button>
+      </xj-button-group>
 
     <hr/>
     <!-- xj-icon -->
@@ -32,8 +40,8 @@
 export default {
   name: 'App',
  methods: {
-   click(){
-     console.log('click');
+   click(event){
+     console.log('click', event);
    }
  }
 }

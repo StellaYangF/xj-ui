@@ -1,5 +1,5 @@
 <template>
-    <button class='xj-button' :class='btnClass' @click="$emit('click')" :disabled='loading'>
+    <button class='xj-button' :class='btnClass' @click="$emit('click', $event)" :disabled='loading'>
         <span v-if='$slots.default'>
             <slot></slot>
         </span>
@@ -67,7 +67,7 @@ $active-color: #3a8ee6;
     font-size: $font-size;
     display: inline-flex;
     justify-content: center;
-    vertical-align: center;
+    align-items: center;
     cursor: pointer;
     &:hover {
         border-color: $border-color;
