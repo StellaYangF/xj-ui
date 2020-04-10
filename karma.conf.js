@@ -9,7 +9,11 @@ module.exports = function(config) {
     },
     autoWatch: true,
     webpack: webpackConfig,
-    reporters: ["spec"],
+    reporters: ["spec", "coverage" ],
     browsers: ["ChromeHeadless"],
+    coverageReporter: {
+      dir: './coverage',
+      reporters: [{ type: 'lcov', subdir: '.' }, { type: 'text-summary' }]
+    }
   });
 };

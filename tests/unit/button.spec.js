@@ -41,7 +41,7 @@ describe('Button.vue', () => {
     wrapper.find('button').trigger('click');
     expect(wrapper.emitted('click').length).to.eq(1);
   })
-  it('4.按钮传入 iconPosition 是否正常显示', () => {
+  it('5.按钮传入 iconPosition 是否正常显示', () => {
     const wrapper = shallowMount(Button, {
       attachToDocument:true, // 测试元素的计算属性，将组件挂在到浏览器上
       stubs: {
