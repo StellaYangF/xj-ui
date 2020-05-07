@@ -15,6 +15,8 @@
   },
   "devDependencies": {
     "@babel/preset-env": "^7.9.5",
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
     "@types/karma": "^4.4.1",
     "@types/karma-chai": "^0.1.2",
     "@types/karma-chrome-launcher": "^3.1.0",
@@ -48,5 +50,8 @@
     "commitizen": {
       "path": "./node_modules/cz-customizable"
     }
+  },
+  "husky": {
+    "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
   }
 }
