@@ -13,10 +13,10 @@ module.exports = {
   ],
 
   scopes: [
-    { name: "按钮" },
-    { name: "表单" },
-    { name: "功能" },
-    { name: "订单" },
+    { name: "cz" },
+    { name: "button" },
+    { name: "form" },
+    { name: "function" },
   ],
 
   allowTicketNumber: false,
