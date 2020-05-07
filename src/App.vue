@@ -16,7 +16,7 @@
       <xj-button type='danger' icon='location'>danger loading button</xj-button>
       <xj-button type='info' icon='edit'>info button</xj-button>
       <xj-button type='success' icon='success' icon-position='left' >info icon left</xj-button>
-      <xj-button @click="click" :loading='true'>defaul button</xj-button>
+      <xj-button @click="click" :loading='true'>default button</xj-button>
 
       <hr/>
       <!-- button group -->
@@ -39,7 +39,7 @@
 
 export default {
   name: 'App',
- methods: {
+  methods: {
    click(event){
      console.log('click', event);
    }
