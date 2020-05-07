@@ -1,6 +1,6 @@
-import Button from "./Button.vue";
+import Button from "./button/Button.vue";
 import Icon from "./Icon.vue";
-import ButtonGroup from "./ButtonGroup.vue";
+import ButtonGroup from "./button/ButtonGroup.vue";
 
 function install(Vue) {
     Vue.component(Button.name, Button);
