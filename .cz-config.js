@@ -9,7 +9,7 @@ module.exports = {
     { value: "test", name: "test: 新增测试" },
     { value: "chore", name: "chore: 辅助代码，如生成代码的库" },
     { value: "revert", name: "revert: 提交撤销" },
-    { value: "WIP", name: "work in porgress: 进程工作" },
+    { value: "WIP", name: "work in progress: 进程工作" },
   ],
 
   scopes: [
@@ -63,3 +63,4 @@ module.exports = {
 };
 
 // cz-customizable
+// cz-conventional-changelog
