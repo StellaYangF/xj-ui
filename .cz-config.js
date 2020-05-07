@@ -1,15 +1,15 @@
 module.exports = {
   types: [
-    { value: "feature", name: "特性: 一个新特性" },
-    { value: "fix", name: "修复: 修复一个 bug" },
-    { value: "docs", name: "文档: 变更的只有文档" },
-    { value: "style", name: "格式: 空格、分号等格式修复" },
-    { value: "refactor", name: "重构: 注意和 bug 修复、新增特性分开" },
-    { value: "perf", name: "性能: 性能提高" },
-    { value: "test", name: "测试: 新增测试" },
-    { value: "chore", name: "杂物: 辅助代码，如生成代码的库" },
-    { value: "revert", name: "撤销: 提交撤销" },
-    { value: "WIP", name: "进程工作: 进程工作" },
+    { value: "feature", name: "feature: 一个新特性" },
+    { value: "fix", name: "fix: 修复一个 bug" },
+    { value: "docs", name: "documents: 变更的只有文档" },
+    { value: "style", name: "style: 空格、分号等格式修复" },
+    { value: "refactor", name: "refactor: 注意和 bug 修复、新增特性分开" },
+    { value: "perf", name: "performance: 性能提高" },
+    { value: "test", name: "test: 新增测试" },
+    { value: "chore", name: "chore: 辅助代码，如生成代码的库" },
+    { value: "revert", name: "revert: 提交撤销" },
+    { value: "WIP", name: "work in porgress: 进程工作" },
   ],
 
   scopes: [
@@ -61,3 +61,5 @@ module.exports = {
   // footerPrefix : 'ISSUES CLOSED:'
   // askForBreakingChangeFirst : true, // default is false
 };
+
+// cz-customizable
