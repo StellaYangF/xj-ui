@@ -33,6 +33,7 @@
     "cross-env": "^7.0.2",
     "cz-conventional-changelog": "^3.2.0",
     "cz-customizable": "^6.2.0",
+    "husky": "^4.2.5",
     "karma": "^4.4.1",
     "karma-chai": "^0.1.0",
     "karma-chrome-launcher": "^3.1.0",
