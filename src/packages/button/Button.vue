@@ -68,6 +68,7 @@ $active-color: #3a8ee6;
     display: inline-flex;
     justify-content: center;
     align-items: center;
+    margin: 0 0 2px 0;
     cursor: pointer;
     &:hover {
         border-color: $border-color;

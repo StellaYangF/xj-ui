@@ -14,6 +14,7 @@ Vue.directive('highlight',function (el) {
     hljs.highlightBlock(block)
   })
 })
+
 export default ({
   Vue,
   options, 
