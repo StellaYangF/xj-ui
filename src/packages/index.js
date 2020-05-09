@@ -1,6 +1,11 @@
 import Button from "./button/Button.vue";
+<<<<<<< HEAD
+import Icon from "./Icon.vue";
+import ButtonGroup from "./button/ButtonGroup.vue";
+=======
 import ButtonGroup from "./button/ButtonGroup.vue";
 import Icon from "./Icon.vue";
+>>>>>>> develop
 
 function install(Vue) {
     Vue.component(Button.name, Button);

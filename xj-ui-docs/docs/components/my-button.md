@@ -1,6 +1,24 @@
 ## 基础按钮
 <demo-block>
 ::: slot source
+<<<<<<< HEAD
+<xj-button>default</xj-button>
+<xj-button type='danger'>danger</xj-button>
+<xj-button type='warning'>warning</xj-button>
+<xj-button type='info'>info</xj-button>
+<xj-button type='primary'>primary</xj-button>
+:::
+
+属性 `type`，值分别有 `danger`, `warning`, `info`, `primary`
+
+::: slot highlight
+```html
+<xj-button>default</xj-button>
+<xj-button type='danger'>danger</xj-button>
+<xj-button type='warning'>warning</xj-button>
+<xj-button type='info'>info</xj-button>
+<xj-button type='primary'>primary</xj-button>
+=======
 <button-test1></button-test1>
 :::
 
@@ -34,10 +52,41 @@
 <xj-button icon='location'>location</xj-button>
 <xj-button icon='edit'>edit</xj-button>
 <xj-button icon='success'>success</xj-button>
+>>>>>>> develop
 ```
 :::
 </demo-block>
 
+<<<<<<< HEAD
+## 带图标按钮
+
+<demo-block>
+:::slot source
+<xj-button type='primary' icon='arrow-right'>arrow-right</xj-button>
+<xj-button type='primary' icon='arrow-left'>arrow-left</xj-button>
+<xj-button type='primary' icon='search'>search</xj-button>
+<xj-button type='primary' icon='minus'>minus</xj-button>
+<xj-button type='primary' icon='location'>location</xj-button>
+<xj-button type='primary' icon='edit'>edit</xj-button>
+<xj-button type='primary' icon='success'>success</xj-button>
+:::
+
+添加 `icon` 属性即可，值分别有 `arrow-right`, `arrow-left`, `search`, `minus`, `location`, `edit`, `success`
+
+:::slot highlight
+```html
+<xj-button type='primary' icon='arrow-right'>arrow-right</xj-button>
+<xj-button type='primary' icon='arrow-left'>arrow-left</xj-button>
+<xj-button icon='primary'>search</xj-button>
+<xj-button type='primary' icon='minus'>minus</xj-button>
+<xj-button type='primary' icon='location'>location</xj-button>
+<xj-button type='primary' icon='edit'>edit</xj-button>
+<xj-button type='primary' icon='success'>success</xj-button>
+```
+:::
+</demo-block>
+
+=======
 #### 按钮位置
 <demo-block>
 ::: slot source
@@ -55,6 +104,7 @@
 
 </demo-block>
 
+>>>>>>> develop
 ## 加载中
 
 <demo-block>
@@ -72,7 +122,10 @@
 </demo-block>
 
 ## 按钮组
+<<<<<<< HEAD
+=======
 按钮组
+>>>>>>> develop
 
 <demo-block>
 ::: slot source
