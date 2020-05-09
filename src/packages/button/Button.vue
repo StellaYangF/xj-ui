@@ -51,11 +51,7 @@ export default {
 }
 </script>
 <style lang="scss">
-<<<<<<< HEAD:src/packages/button/Button.vue
- @import '@/styles/_var.scss';
-=======
  @import '../../styles/_var.scss';
->>>>>>> develop:src/packages/button/Button.vue
 $height: 42px;
 $font-size: 16px;
 $color: #606266;
@@ -72,10 +68,6 @@ $active-color: #3a8ee6;
     display: inline-flex;
     justify-content: center;
     align-items: center;
-<<<<<<< HEAD:src/packages/button/Button.vue
-    margin: 0 0 2px 0;
-=======
->>>>>>> develop:src/packages/button/Button.vue
     cursor: pointer;
     &:hover {
         border-color: $border-color;
