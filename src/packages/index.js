@@ -1,16 +1,15 @@
 import Button from "./button/Button.vue";
-<<<<<<< HEAD
-import Icon from "./Icon.vue";
-import ButtonGroup from "./button/ButtonGroup.vue";
-=======
 import ButtonGroup from "./button/ButtonGroup.vue";
 import Icon from "./Icon.vue";
->>>>>>> develop
+import Carousel from "./carousel/Carousel.vue";
+import CarouselItem from "./carousel/CarouselItem.vue";
 
 function install(Vue) {
     Vue.component(Button.name, Button);
-    Vue.component(Icon.name, Icon);
     Vue.component(ButtonGroup.name, ButtonGroup);
+    Vue.component(Icon.name, Icon);
+    Vue.component(Carousel.name, Carousel);
+    Vue.component(CarouselItem.name, CarouselItem);
 }
 
 // script 标签引入时，不会 调用 install 方法
