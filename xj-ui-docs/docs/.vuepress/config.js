@@ -1,6 +1,6 @@
 module.exports = {
   title: "XJ-UI",
-  description: "Custom Component",
+  description: "自定义组件库",
   dest: "./build",
   port: 1234,
 
@@ -25,11 +25,11 @@ module.exports = {
   themeConfig: {
     nav: [
       {
-        text: "Home",
+        text: "首页",
         link: "/",
       },
       {
-        text: "Custom Component",
+        text: "自定义组件库",
         link: "/components/my-button",
       },
     ],
