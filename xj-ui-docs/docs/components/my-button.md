@@ -1,6 +1,7 @@
 ## 基础按钮
 <demo-block>
 ::: slot source
+<<<<<<< HEAD
 <xj-button>default</xj-button>
 <xj-button type='danger'>danger</xj-button>
 <xj-button type='warning'>warning</xj-button>
@@ -17,10 +18,46 @@
 <xj-button type='warning'>warning</xj-button>
 <xj-button type='info'>info</xj-button>
 <xj-button type='primary'>primary</xj-button>
+=======
+<button-test1></button-test1>
+:::
+
+设置 **type** 属性，可选值：`danger`, `warning`, `info`, `primary`
+
+::: slot highlight
+```html
+  <xj-button>default</xj-button>
+  <xj-button type='danger'>danger</xj-button>
+  <xj-button type='warning'>warning</xj-button>
+  <xj-button type='info'>info</xj-button>
+  <xj-button type='primary'>primary</xj-button>
 ```
 :::
 </demo-block>
 
+## 带图标按钮
+<demo-block>
+::: slot source
+<button-test2></button-test2>
+:::
+
+设置 **icon** 属性，可选值：`arrow-right`, `arrow-left`, `search`, `minus`, `location`, `edit`, `success`
+
+::: slot highlight
+```html
+<xj-button icon='arrow-right'>arrow-right</xj-button>
+<xj-button icon='arrow-left'>arrow-left</xj-button> 
+<xj-button icon='search'>search</xj-button>
+<xj-button icon='minus'>minus</xj-button>
+<xj-button icon='location'>location</xj-button>
+<xj-button icon='edit'>edit</xj-button>
+<xj-button icon='success'>success</xj-button>
+>>>>>>> develop
+```
+:::
+</demo-block>
+
+<<<<<<< HEAD
 ## 带图标按钮
 
 <demo-block>
@@ -49,6 +86,25 @@
 :::
 </demo-block>
 
+=======
+#### 按钮位置
+<demo-block>
+::: slot source
+<button-test5></button-test5>
+:::
+
+设置 **icon-position** 属性值，决定按钮图标和文字顺序，可选值有：`right`(默认), `left`
+
+::: slot highlight
+```html
+<xj-button icon="edit" icon-position='left'>left</xj-button>
+<xj-button icon="success" icon-position='left'>left</xj-button>
+```
+:::
+
+</demo-block>
+
+>>>>>>> develop
 ## 加载中
 
 <demo-block>
@@ -66,6 +122,10 @@
 </demo-block>
 
 ## 按钮组
+<<<<<<< HEAD
+=======
+按钮组
+>>>>>>> develop
 
 <demo-block>
 ::: slot source

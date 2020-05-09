@@ -15,7 +15,11 @@ export default {
 </script>
 
 <style lang="scss">
+<<<<<<< HEAD:src/packages/button/ButtonGroup.vue
 @import '@/styles/_var.scss';
+=======
+@import '../../styles/_var.scss';
+>>>>>>> develop:src/packages/button/ButtonGroup.vue
     .xj-button-group {
         display: flex;
         vertical-align: center;

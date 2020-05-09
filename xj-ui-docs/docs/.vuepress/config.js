@@ -10,16 +10,16 @@ module.exports = {
   ],
 
   // language
-  locales: {
-    '/': {
-      lang: 'en-US',
-      description: 'Custom Component'
-    },
-    '/zh/': {
-      lang: 'zh-CN',
-      description: '自定义组件库'
-    },
-  },
+  // locales: {
+  //   '/': {
+  //     lang: 'en-US',
+  //     description: 'Custom Component'
+  //   },
+  //   '/zh/': {
+  //     lang: 'zh-CN',
+  //     description: '自定义组件库'
+  //   },
+  // },
 
   // navbar
   themeConfig: {
@@ -32,28 +32,10 @@ module.exports = {
         text: "自定义组件库",
         link: "/components/my-button",
       },
-      {
-        text: "a",
-        link: "/c",
-      },
-      {
-        text: "b",
-        link: "/d",
-      },
-      {
-        text: "c",
-        link: "/e",
-      },
-      {
-        text: "d",
-        link: "/f",
-      },
     ],
     sidebar: {
       "/components/": [
-        'my-button',
-        'one',
-        'two',
+        ['my-button', '按钮'],
       ],
     },
   },
