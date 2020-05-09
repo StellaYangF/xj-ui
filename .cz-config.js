@@ -14,6 +14,7 @@ module.exports = {
 
   scopes: [
     { name: "cz" },
+    { name: "ignore" },
     { name: "button" },
     { name: "form" },
     { name: "function" },

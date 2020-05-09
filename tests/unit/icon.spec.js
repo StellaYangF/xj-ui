@@ -12,4 +12,4 @@ describe('Icon.vue', () => {
     })
     expect(wrapper.find('use').attributes('href')).to.eq('#icon-edit');
   })
-})
+});
