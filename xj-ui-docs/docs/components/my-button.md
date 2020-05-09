@@ -1,51 +1,61 @@
-<!-- # Button Component -->
+## 基础按钮
+<demo-block>
+::: slot source
+<button-test1></button-test1>
+:::
 
-## basic button
+设置 **type** 属性，可选值：`danger`, `warning`, `info`, `primary`
 
-<xj-button>default</xj-button>
-
-<xj-button type='danger'>danger</xj-button>
-<xj-button type='warning'>warning</xj-button>
-<xj-button type='info'>info</xj-button>
-<xj-button type='primary'>primary</xj-button>
-
+::: slot highlight
 ```html
-<xj-button>default</xj-button>
-
-<xj-button type='danger'>danger</xj-button>
-<xj-button type='warning'>warning</xj-button>
-<xj-button type='info'>info</xj-button>
-<xj-button type='primary'>primary</xj-button>
+  <xj-button>default</xj-button>
+  <xj-button type='danger'>danger</xj-button>
+  <xj-button type='warning'>warning</xj-button>
+  <xj-button type='info'>info</xj-button>
+  <xj-button type='primary'>primary</xj-button>
 ```
+:::
+</demo-block>
 
-## button with icon
+## 带图标按钮
+<demo-block>
+::: slot source
+<button-test2></button-test2>
+:::
 
-<xj-button icon='arrow-right'>info</xj-button>
+设置 **icon** 属性，可选值：`arrow-right`, `arrow-left`, `search`, `minus`, `location`, `edit`, `success`
 
-<xj-button icon='search'>default button</xj-button>
-<xj-button type='primary' icon='minus'>primary button</xj-button>
-<xj-button type='warning' icon='arrow-left'>warning button</xj-button>
-<xj-button type='danger' icon='location'>danger loading button</xj-button>
-<xj-button type='info' icon='edit'>info button</xj-button>
-<xj-button type='success' icon='success' icon-position='left' >info icon left</xj-button>
-<xj-button :loading='true'>default button</xj-button>
-
+::: slot highlight
 ```html
-<xj-button icon="search">default button</xj-button>
-<xj-button type="primary" icon="minus">primary button</xj-button>
-<xj-button type="warning" icon="arrow-left">warning button</xj-button>
-<xj-button type="danger" icon="location">danger loading button</xj-button>
-<xj-button type="info" icon="edit">info button</xj-button>
-<xj-button type="success" icon="success" icon-position="left"
-  >info icon left</xj-button
->
-<xj-button  :loading="true">default button</xj-button>
+<xj-button icon='arrow-right'>arrow-right</xj-button>
+<xj-button icon='arrow-left'>arrow-left</xj-button> 
+<xj-button icon='search'>search</xj-button>
+<xj-button icon='minus'>minus</xj-button>
+<xj-button icon='location'>location</xj-button>
+<xj-button icon='edit'>edit</xj-button>
+<xj-button icon='success'>success</xj-button>
 ```
+:::
+</demo-block>
+
+#### 按钮位置
+<demo-block>
+::: slot source
+<button-test5></button-test5>
+:::
+
+设置 **icon-position** 属性值，决定按钮图标和文字顺序，可选值有：`right`(默认), `left`
+
+::: slot highlight
+```html
+<xj-button icon="edit" icon-position='left'>left</xj-button>
+<xj-button icon="success" icon-position='left'>left</xj-button>
+```
+:::
+
+</demo-block>
 
 ## 加载中
-
-要设置为 loading 状态，只要设置loading属性为true即可。
-
 
 <demo-block>
 ::: slot source
@@ -61,7 +71,7 @@
 :::
 </demo-block>
 
-## button group
+## 按钮组
 按钮组
 
 <demo-block>
@@ -86,18 +96,3 @@
 ```
 :::
 </demo-block>
-
-<xj-button-group>
-  <xj-button icon='arrow-left'  icon-position='left'>上一页</xj-button>
-  <xj-button >第一页</xj-button>
-  <xj-button icon='arrow-right'>下一页</xj-button>
-</xj-button-group>
-
-```html
-<xj-button-group>
-  <xj-button icon='arrow-left'  icon-position='left'>上一页</xj-button>
-  <xj-button >第一页</xj-button>
-  <xj-button icon='arrow-right'>下一页</xj-button>
-</xj-button-group>
-```
-
