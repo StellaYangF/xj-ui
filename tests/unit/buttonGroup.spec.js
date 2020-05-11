@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 import { shallowMount } from '@vue/test-utils'
-import ButtonGroup from '@/packages/ButtonGroup.vue';
+import ButtonGroup from '@/packages/button/ButtonGroup.vue';
 
 describe('ButtonGroup.vue', () => {
   // tdd
