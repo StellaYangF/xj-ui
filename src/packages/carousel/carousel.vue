@@ -1,140 +1,137 @@
 <template>
-  <div
-    class="xj-carousel"
-    :style="{height}"
+  <div 
+    class='xj-carousel'
     @mouseenter="handleMouseEnter"
     @mouseleave="handleMouseLeave"
     @touchstart="handleTouchStart"
     @touchend="handleTouchEnd"
+    :style="{height}"
   >
-    <div class="viewport">
+    <div class='viewport'>
       <slot></slot>
     </div>
-    <div class="dots">
+
+    <div class='dots'>
       <span
-        v-for="item in len"
-        :key="item"
-        :class="{active:item-1 === currentSelected}"
-        @click="select(item-1)"
-      >{{item-1}}</span>
+        v-for="dot in len"
+        :key='dot'
+        :class='{ active: dot - 1 === currentSelected }'
+        @click='select(dot - 1)'
+      ></span>
     </div>
-    <div class="arrow-box">
-      <xj-button icon="left" @click="select(currentSelected - 1,true)"></xj-button>
-      <xj-button icon="right" @click="select(currentSelected + 1,true)"></xj-button>
+
+    <div class='arrow-box'>
+      <xj-icon icon='arrow-left' @click="select(currentSelected - 1, true)"></xj-icon>
+      <xj-icon icon='arrow-right' @click="select(currentSelected + 1, true)"></xj-icon>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "xj-carousel", // 轮播图组件
+  name: 'xj-carousel',
+
   props: {
-    height: {
-      type: String,
-      default: "200px"
+    initialIndex: {
+      type: Number,
+      default: 0,
     },
     autoplay: {
       type: Boolean,
-      default: true
+      default: true,
     },
-    delay: {
-      type: Number,
-      default: 3000
+    height: {
+      type: String,
+      default: '200px',
     },
-    initialIndex: {
-      // 默认用户传递的值 这个不会变
+    interval: {
       type: Number,
-      default: 0
+      default: 3000,
     },
     loop: {
       type: Boolean,
-      default: true
+      default: true,
     }
   },
+
   data() {
-    // currentSelected 这个值是可以被更改的
-    return { currentSelected: this.initialIndex, len: 0, reverse: false };
+    return {
+      currentSelected: this.initialIndex,
+      len: 0,
+      reverse: false,
+    }
   },
+
+  mounted() {
+    this.children = this.$children.filter(child => child.$options.name === 'xj-carousel-item');
+    this.len = this.children.length;
+    this.run();
+  },
+
+  beforeDestroy() {
+    this.removeTimer();
+  },
+  
   methods: {
-    handleTouchStart(e) {
-      this.handleMouseEnter();
-      // 需要记录拖拽前的位置
-
-      this.startTouch = e.touches[0];
-    },
-    handleTouchEnd(e) {
-      let endTouch = e.changedTouches[0];
-
-      let {clientX:x1,clientY:y1} = this.startTouch;
-      let {clientX:x2,clientY:y2} = endTouch;
-      let distance = Math.sqrt(Math.pow(x2-x1,2) + Math.pow(y2-y1,2));
-      // 是往哪边移动
-
-      let disY = Math.abs(y2-y1);
-      let x = Math.sqrt(2)/2 * distance;
-      if(disY < x){
-         if(x2 > x1){
-             this.select(this.currentSelected - 1,true);
-         }else{
-             this.select(this.currentSelected + 1,true)
-         }
-      }
-      this.run();
-    },
     handleMouseEnter() {
-      clearInterval(this.timer);
-      this.timer = null;
+      this.removeTimer();
     },
+
     handleMouseLeave() {
       this.run();
     },
+
+    handleTouchStart(e) {
+      this.handleMouseEnter();
+      this.startTouch = e.touches[0];
+    },
+
+    handleTouchEnd(e) {
+      let endTouch = e.changedTouches[0];
+      let { clientX: x1, clientY: y1 } = this.startTouch;
+      let { clientX: x2, clientY: y2 } = endTouch;
+
+      let distance = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+      let disY = Math.abs(y2 - y1);
+      let x = Math.sqrt(2)/2 * distance;
+      if (disY < x) {
+        if (x2 > x1) this.select(this.currentSelected - 1, true);
+        else this.select(this.currentSelected + 1, true);
+      }
+    },
+
     select(newIndex, flag) {
       if (newIndex === this.len) newIndex = 0;
       if (newIndex === -1) newIndex = this.len - 1;
-      let index = this.currentSelected;
-      this.reverse = index > newIndex ? true : false; // 控制了正反
-      // 如果是无缝滚动 0 => 2 反
-      // 2 => 0 正
+      let currentSelected = this.currentSelected;
+      this.reverse = currentSelected > newIndex ? true : false;
       if ((this.timer || flag) && this.loop) {
-        //如果是手动点击 dots 的话 是不应该触发无缝小过的
-        // 没有无缝就没有临界点的问题
-        if (index == 0 && newIndex == this.len - 1) this.reverse = true;
-        if (index == this.len - 1 && newIndex === 0) this.reverse = false;
+        if (currentSelected == 0 && newIndex == this.len - 1)  this.reverse = true;
+        if (currentSelected == this.len - 1 && newIndex == 0) this.reverse = false;
       }
-      // 告诉子组件 你是正向移动 还是反向移动
       this.children.forEach(vm => {
-        // 更改子组件的数据
         vm.reverse = this.reverse;
-      });
-      this.$nextTick(() => {
-        this.currentSelected = newIndex;
-      });
+      })
+      this.$nextTick(() => this.currentSelected = newIndex);
     },
+
     run() {
       if (this.autoplay) {
-        // 如果是自动不放 就开始运行
         this.timer = setInterval(() => {
-          let index = this.currentSelected;
-          let newIndex = index + 1;
+          let newIndex = this.currentSelected + 1;
           this.select(newIndex);
-        }, this.delay);
+        }, this.interval);
       }
-    }
-  },
-  beforeDestroy() {
-    clearInterval(this.timer);
-    this.timer = null;
-  },
-  mounted() {
-    // 让currentSelected 不停的增加
-    this.children = this.$children.filter(
-      item => item.$options.name == "xj-carousel-item"
-    );
-    this.len = this.children.length;
-    this.run();
+    },
+
+    removeTimer() {
+      clearInterval(this.timer);
+      this.timer = null;
+    },
   }
-};
+}
 </script>
+
 <style lang="scss">
 .xj-carousel {
   position: relative;
@@ -178,14 +175,11 @@ export default {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    button {
-      background: rgba(0,0,0,.5);
-      border: none;
+    svg {
+      fill: rgba(255,255,255,.5);
       &:hover {
-        background: rgba(0,0,0,.7);
-      }
-      svg {
-        color: #fff;
+        fill: #fff;
+        cursor: pointer;
       }
     }
   }

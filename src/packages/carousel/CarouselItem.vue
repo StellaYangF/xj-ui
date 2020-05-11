@@ -11,9 +11,7 @@ export default {
   name: "xj-carousel-item",
 
   data() {
-    let children = this.$parent.$children.filter(
-      child => child.$options.name === "xj-carousel-item"
-    );
+    let children = this.$parent.$children.filter( child => child.$options.name === "xj-carousel-item" );
     return {
       index: children.length - 1,
       reverse:false 
