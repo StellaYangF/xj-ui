@@ -5,18 +5,23 @@
 
     <h2>轮播组件</h2>
     <ViewCarousel></ViewCarousel>
+
+    <h2>容器组件</h2>
+    <ViewContainer></ViewContainer>
   </div>
 </template>
 
 <script>
 import ViewButton from './views/ViewButton';
 import ViewCarousel from './views/ViewCarousel';
+import ViewContainer from './views/ViewContainer';
 
 export default {
   name: 'App',
   components: {
     ViewButton,
-    ViewCarousel
+    ViewCarousel,
+    ViewContainer,
   }
 }
 </script>

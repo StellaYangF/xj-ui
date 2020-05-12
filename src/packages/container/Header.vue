@@ -1,7 +1,7 @@
 <template>
-  <div>
-    
-  </div>
+  <header>
+    <slot></slot>
+  </header>
 </template>
 
 <script>
