@@ -19,6 +19,8 @@ module.exports = {
     { name: "form" },
     { name: "function" },
     { name: "carousel" },
+    { name: "carousel-item" },
+    { name: "container" },
   ],
 
   allowTicketNumber: false,
