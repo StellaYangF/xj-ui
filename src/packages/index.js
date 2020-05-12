@@ -25,8 +25,12 @@ function install(Vue) {
     Vue.directive(infiniteScroll.name, infiniteScroll);
 }
 
-// script 标签引入时，不会 调用 install 方法
-if (window && window.Vue !== undefined) install(Vue);
+// try{
+//   if (window && window.Vue !== undefined) install(Vue);
+// } catch(e) {
+//   console.log(e);
+//   throw(e);
+// }
 
 export default {
     install,
