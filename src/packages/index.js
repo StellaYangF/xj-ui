@@ -25,11 +25,12 @@ function install(Vue) {
     Vue.directive(infiniteScroll.name, infiniteScroll);
 }
 
-try{
-  if (window && window.Vue !== undefined) install(Vue);
-} catch(e) {
-  console.log(e);
-}
+// try{
+//   if (window && window.Vue !== undefined) install(Vue);
+// } catch(e) {
+//   console.log(e);
+//   throw(e);
+// }
 
 export default {
     install,
