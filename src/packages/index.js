@@ -26,7 +26,7 @@ function install(Vue) {
 }
 
 // script 标签引入时，不会 调用 install 方法
-if (window.Vue !== undefined) install(Vue);
+if (window && window.Vue !== undefined) install(Vue);
 
 export default {
     install,
