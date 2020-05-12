@@ -8,6 +8,8 @@
 
     <h2>容器组件</h2>
     <ViewContainer></ViewContainer>
+
+    
   </div>
 </template>
 
