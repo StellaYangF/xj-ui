@@ -7,6 +7,9 @@ import Aside from './container/Aside';
 import Container from './container/Container';
 import Header from './container/Header';
 import Footer from './container/Footer';
+// directives
+import infiniteScroll from './infiniteScroll';
+
 
 function install(Vue) {
     Vue.component(Button.name, Button);
@@ -18,6 +21,8 @@ function install(Vue) {
     Vue.component(Container.name, Container);
     Vue.component(Header.name, Header);
     Vue.component(Footer.name, Footer);
+
+    Vue.directive(infiniteScroll.name, infiniteScroll);
 }
 
 // script 标签引入时，不会 调用 install 方法
