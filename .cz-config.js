@@ -20,6 +20,7 @@ module.exports = {
     { name: "function" },
     { name: "carousel" },
     { name: "carousel-item" },
+    { name: "container" },
   ],
 
   allowTicketNumber: false,
