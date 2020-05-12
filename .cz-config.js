@@ -22,6 +22,7 @@ module.exports = {
     { name: "carousel-item" },
     { name: "container" },
     { name: "directive" },
+    { name: "config" },
   ],
 
   allowTicketNumber: false,
